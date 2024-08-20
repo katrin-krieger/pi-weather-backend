@@ -13,7 +13,7 @@ const opts = {
   }
 }
 
-async function routes (fastify, options) {
+async function routes (fastify, options, done) {
   fastify.get('/', async (request, response) => {
     return "Piweather API"
   })
@@ -26,6 +26,7 @@ async function routes (fastify, options) {
     //add to database
     return reply.code(201).send("OK")
   })
+  done()
 }
 
 export default routes;
